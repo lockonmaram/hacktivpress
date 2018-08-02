@@ -2,13 +2,15 @@
 
 server routes:
 
-| Route                 | HTTP   |          Description         |
-|-----------------------|--------|:----------------------------:|
-| /api/                 | GET    | Home                         |
-| /api/books            | GET    | Get all books data           |
-| /api/seed             | GET    | Seed dummy data              |
-| /api/books/:id        | GET    | Get a book data              |
-| /api/books/addOne     | POST   | Add a book data              |
-| /api/books/addMany    | POST   | Add many book data (in json) |
-| /api/books/:id/delete | DELETE | Delete a book data           |
-| /api/books/:id/update | PUT    | Update a book data           |
+| Route              | HTTP   |         Description        |
+|--------------------|--------|:--------------------------:|
+| /                  | GET    | Home                       |
+| /users/signup      | POST   | Sign up a user             |
+| /users/login       | POST   | Log in a user              |
+| /users/fblogin     | POST   | log in a user via facebook |
+| /articles          | GET    | Get all articles           |
+| /articles          | POST   | Add one article            |
+| /articles/:id      | GET    | Get one article            |
+| /articles/:id      | DELETE | Delete one article         |
+| /articles/:id      | PUT    | Update one article         |
+| /articles/category | POST   | Get articles by category   |
