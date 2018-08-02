@@ -14,11 +14,14 @@ var articleSchema = new Schema({
     type: String,
     require: true
   },
-  author: {
+  cover: {
+    type: String
+  },
+  author: [{
     type: Schema.Types.ObjectId,
     require: true,
     ref: 'user'
-  }
+  }]
 },{
   timestamps: {
     createdAt: 'created_at',

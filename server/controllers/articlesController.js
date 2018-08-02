@@ -5,6 +5,7 @@ class ArticleController {
     Article.create({
       title: req.body.title,
       content: req.body.content,
+      cover: req.body.cover,
       category: req.body.category,
       author: req.body.author
     })
@@ -16,8 +17,14 @@ class ArticleController {
     })
   }
   static getArticles(req, res){
-    Article.find({)
+    Article.find()
+    // .populate('author')
+    // .exec(function(err, articles){
+    //   console.log(articles);
+    //   res.status(200).json(articles)
+    // })
     .then(articles=>{
+      console.log(articles);
       res.status(200).json(articles)
     })
     .catch(err=>{
@@ -46,7 +53,7 @@ class ArticleController {
     Article.updateOne({ _id: req.params.id },{
       title: req.body.title,
       content: req.body.content,
-      writter: req.body.writter
+      category: req.body.category
     })
     .then(update=>{
       res.status(200).json('article successfully updated')

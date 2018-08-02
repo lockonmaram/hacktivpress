@@ -46,7 +46,7 @@ class UserController {
           email: user.email,
           first_name: user.first_name,
           last_name: user.last_name
-        }, 'hactivpress')
+        }, process.env.JWT_SECRET_KEY)
         console.log(tokenUser);
         res.status(200).json({token: tokenUser, userId: user._id, first_name: user.first_name, last_name: user.last_name })
         // req.headers.token = tokenUser
@@ -79,7 +79,7 @@ class UserController {
                 email: user.email,
                 first_name: user.first_name,
                 last_name: user.last_name
-              }, 'hactivpress')
+              }, process.env.JWT_SECRET_KEY)
               console.log(tokenUser);
               res.status(200).json({token: tokenUser, userId: user._id, first_name: user.first_name, last_name: user.last_name })
             }
@@ -90,7 +90,7 @@ class UserController {
             email: regist[0].email,
             first_name: regist[0].first_name,
             last_name: regist[0].last_name
-          }, 'hactivpress')
+          }, process.env.JWT_SECRET_KEY)
           console.log(regist);
           console.log('tokenasdasd',tokenUser);
           res.status(200).json({token: tokenUser, userId: regist[0]._id, first_name: regist[0].first_name, last_name: regist[0].last_name })
